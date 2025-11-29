@@ -1,0 +1,286 @@
+﻿
+
+/******************
+    global
+*******************/
+a{color:#fff;}
+input::-webkit-input-placeholder{color:#aaaaaa;}
+.tc{text-align: center;}
+.tl{text-align: left;}
+.tr{text-align: right;}
+.hide{display: none!important}
+.v-hidden{visibility: hidden}
+.high-layer{position: relative;z-index: 10}
+
+
+/******************
+     全局
+*******************/
+.logo{padding: .5rem 0 0 1.1rem;position: relative;z-index:5;}
+.logo span{display:block; height: 2.8rem;background: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/logo.png) no-repeat;background-size: auto 2.8rem;overflow: hidden;line-height: 400px;}
+.f-red{color: #ff3838;}
+.box{overflow: hidden;}
+.all-m{position: absolute;left: 50%;top: 50%;-webkit-transform: translate(-50%, -50%);}
+.com-bf{position: relative;}
+.com-bf:before{content: "";position: absolute;}
+
+
+
+
+
+
+
+
+/*中间go*/
+.go-box{width: 11rem;height: 11rem;padding: 1rem;z-index: 30;}
+.go-box:before{content: "";width: 13rem;height: 13rem;-webkit-border-radius: 13rem; border-radius: 50%;background: #fff;position: absolute;left: 0;top: 0;z-index: -1;}
+.go-btn{background: #ff7654;-webkit-border-radius: 13rem; border-radius: 50%;height: 100%;text-align: center;box-shadow: inset 0 -9px 0 #ff5035,0 3px 0 #ffd6c9;position: relative;z-index: 2;}
+.go-btn em{font-size: 3.8rem;color: #fff;font-weight: 700;padding-top: 2rem;display: inline-block;}
+.go-btn span{display: block;color: #ffd020;font-size: 1.4rem;line-height: 1.6rem;}
+
+
+
+
+
+
+
+
+
+/*红包状态*/
+.ribbon-got:after{content: ''; width: 5.6rem;height: 5.4rem;background: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/ribbon_got.png) no-repeat;background-size:100% auto;position: absolute;right:-.1rem;bottom: -.1rem;z-index: 2;}
+
+/*礼品卡券*/
+.prz-cpn{height: 13rem;background: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/prz_board.png) no-repeat;background-size:100% 100%;display:-webkit-box;color: #fff;}
+.prz-cpn .lt,.prz-cpn .rt{padding-top: 3.2rem;}
+.prz-cpn div.lt{width: 9.8rem;text-align: center;}
+.prz-cpn div.rt{-webkit-box-flex:1;padding-right: 2.2rem;}
+.prz-cpn div.rt h3{font-size: 1.6rem;}
+.prz-cpn div.rt p{font-size: 1.4rem;text-align: justify;}
+.prz-cpn .img-box{width: 5.4rem;display: inline-block;}
+.prz-cpn .img-box img{width: 100%;}
+
+/*无奖品*/
+.prz-none{text-align: center;border: 1px dashed #37708d;border-radius: 4px;padding: 1.6rem 0;}
+.ico-prz{display: inline-block; width: 3.6rem;height: 4.6rem;background: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/ico_prz.png) no-repeat;background-size: 100% auto;}
+.prz-none p{font-size: 1.2rem;color: #236688;line-height: 1.8rem;padding-top: 1.6rem;}
+
+/*获奖信息*/
+.prz-btm{background-image: repeating-linear-gradient(-45deg, #0b99e1, #0b99e1 2px, #088dd1 3px, #088dd1 4px);padding-bottom: 1rem;}
+.prz-slide-up{text-align: center;padding: 2rem 0;}
+.prz-tips{text-align: center;color: #005783;font-size: 1.4rem;padding: 1rem 0;}
+.prz-tips b{font-size: 1.8rem;color: #fff100;font-weight: normal;}
+
+/*获奖者*/
+.winner-list{border-top: 1px solid #0078b6;padding: 0 1.2rem;}
+.winner-list li{border-bottom: 1px solid #0078b6;padding: .9rem 0;display:-webkit-box;}
+.winner-list li .lt{width: 5rem;}
+.winner-list li .rt{-webkit-box-flex:1;color: #fff;font-size: 1.2rem;position: relative;}
+.winner-list li .rt .t{padding-bottom: .5rem;}
+.winner-list li .rt .t .name{color: #fff100;padding-right: 1rem;}
+.winner-list li .rt .txt{text-align: justify;line-height: 1.6rem;}
+.winner-list li .rt .tips{position: absolute;top: 0;right: 0;}
+.winner-list li .rt .tips span{color: #fff100;}
+.winner-list .img-box{width: 3.6rem;height: 3.6rem;overflow: hidden; -webkit-border-radius: 3.6rem; border-radius: 50%;}
+.winner-list .img-box img{width: 100%;}
+
+
+/******************
+     按钮
+*******************/
+.btn-wrap{padding: 1rem 1.2rem;}
+.btn-wrap a{display: inline-block;width: 100%;color: #630001;font-size: 1.8rem;height: 4.4rem;line-height: 4.4rem;text-align: center;border-radius: .6rem;}
+.btn-wrap a.btn-m{text-align: center;display: block;color: #df4733;font-size: 2.2rem;font-weight: 700;background: #fff100;border-bottom: .4rem solid #ffa800;box-shadow: 0 .4rem 0 #0080c1;}
+.btn-wrap a.btn-disable{color:#FFFFFF;background-color:#C5C5C5;text-align: center;display: block;font-size: 2.2rem;font-weight: 700;border-bottom: .4rem solid #B0B0B0;box-shadow: none;}
+
+/*关于理财通1*/
+.intro{background: #0085c7;padding: 2.5rem 0 2rem 0;}
+.line-txt{ position: relative;text-align: center;font-size: 1.8rem;padding-bottom: 1rem;}
+.line-txt:before{ content: ""; height: 1px; line-height: 0; background: #57b9ea; position: absolute;  top: .9rem; left: 0; right: 0; }
+.line-txt span{background: #0085c7; display: inline-block; height: 2.1rem; overflow: hidden; color: #71d0ff;position: relative;z-index: 6;padding: 0 1rem;}
+
+.intro .txt{font-size: 1.2rem;color: #71d0ff;border-left: 3px solid #71d0ff;padding: 0 1.5rem;text-align: justify;line-height: 1.8rem}
+.intro .txt a{color: #71d0ff;}
+.step-map{margin: 1rem 0;}
+
+.guide-txt{padding:5px 0 15px;width:100%;overflow: hidden;text-align: center;}
+.guide-txt li{position:relative;display:inline-block;width:30%;padding-top:69px;font-size: 1.3px;}
+.guide-txt li:before{position: absolute;content:"";top:0;left:50%;margin-left:-28px;width:56px;height: 60px;background: url(/mqq/action/god_wealth20150923/img/ico.png) no-repeat;background-size: 168px auto}
+.guide-txt li:nth-child(2):before{background-position: -56px 0}
+.guide-txt li:nth-child(3):before{background-position: -112px 0}
+.guide-txt li span{display:block;padding:4px 0;color: #57b9ea;font-size: 1.2rem;}
+.guide-txt li em{font-size: 1rem;color: #57b9ea}
+
+
+/******************
+     弹出层
+*******************/
+.pop-detail{position:fixed;z-index:201;top:0;left:0;right:0;bottom:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);}
+.pop-cnt-wrap{position: absolute;left:0;right:0;top:0;bottom:0;}
+.pop-cnt{position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);margin:0 auto;width: 26.5rem; text-align: center;}
+.pop-cnt .cls{ position: absolute; top: 0; right: 0; width: 3.2rem; height: 3.2rem; overflow: hidden; line-height: 400px; background: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/cls.png) no-repeat .4rem .4rem; background-size: 2.4rem 2.4rem;}
+.pop-cnt p.title{ font-size: 1.4rem; color: #bc0e00; text-align:center; font-weight: 700; padding-bottom: 1rem;}
+.bg-blur{-webkit-filter: blur(3px);filter: blur(3px);}   
+
+/*弹窗装饰*/
+.pop-light:before{content: "";width: 32rem;height: 23rem;position: absolute;top:-5px;left: 50%;margin-left: -16rem;background: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/pop_light.png) no-repeat;background-size: 100% auto;z-index: -1;}
+.tape li{position: absolute; background-image: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/tape.png);background-repeat: no-repeat;background-size:3.9rem 17.9rem;}
+.tape li.li-1,.tape li.li-2,.tape li.li-3,.tape li.li-5{width: 2.6rem;height: 1.8rem;}
+.tape li.li-1{background-position: 0 0;left:2rem;top: 0;}
+.tape li.li-2{background-position: 0 -2.8rem;left:0rem;top: 3.4rem;}
+.tape li.li-3{background-position: 0 -5.4rem;left: -1.5rem;top: 16.6rem;}
+.tape li.li-4{width: 3.8rem;height: 2.4rem;background-position: 0 -8rem;right: -1.5rem;top: 22rem;z-index: 1;}
+.tape li.li-5{background-position: 0 0;right: 0;top: 5rem;}
+.tape li.li-6{width: 3.8rem;height: 3rem; background-position: 0 -12rem;left: 3rem;top: 6rem;}
+.tape li.li-7{width: 2rem;height: 2rem;background-position: 0 -15.8rem;right: 2rem;top: 12rem;}
+.prz-tape li.li-3{left: 3rem;top: 15.6rem;}
+.prz-tape li.li-4{top: 18rem;right: 2rem;}
+
+
+/*红包弹窗*/
+.win-txt{font-size: 1.5rem;color: #ffcc19;text-align: center;padding-bottom: 1rem;}
+.win-txt span{display: inline-block;text-align: left;}
+.hb-box .hd{height: 19.4rem;position: relative;}
+.hb-box .hd:before{content: "";background: #bd2e0b;width: 100%;height: 100%;position: absolute;top: 0;left: 0;border-radius: 26.4rem/19.4rem;z-index: -1;}
+/*红包上人物切换*/
+.hb-box .hd:after{content: "";position: absolute;z-index: -2; width: 8.4rem;background-repeat: no-repeat;background-size: 100% auto;left: 1rem;}
+.pop-boy1:after{height: 10rem;top: -5rem;background-image: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/boy1.png);}
+.pop-boy2:after{height: 9rem;top: -5rem;background-image: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/boy2.png);}
+.pop-boy3:after{height: 10rem;top: -4rem;background-image: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/boy3.png);}
+.pop-boy4:after{height: 9rem;top: -4rem;background-image: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/boy4.png);}
+.pop-boy5:after{height: 10rem;top: -4rem;background-image: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/boy5.png);}
+
+.congra{color: #fff;font-size: 1.4rem;padding-top: 1.8rem;}
+.congra b{display: block;font-size: 1.8rem;font-weight: 700;padding-bottom: .5rem;}
+
+.hb-box .bd{background: #ea2202;margin-top: -5.6rem;position: relative;border-radius: 0 0 .5rem .5rem}
+.hb-box .bd:before{content: "";width: 100%;height: 6rem;background: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/hb_open_tag.png) no-repeat;background-size: 100% 6rem;position: absolute;left: 0;top: -4.9rem;z-index: 20;}
+.hb-box .hb-card{background: url(https://img.alicdn.com/imgextra/i4/73070085/O1CN01WXwxcw1CUyHQha8Na_!!73070085.png) no-repeat;background-size: 100% auto; width: 15.8rem;height: 7.3rem;line-height: 7.3rem; text-align: center;color: #ec290a;font-size: 1.5rem;position: absolute;top: -6.5rem;left: 50%;margin-left:-7.9rem; }
+.hb-box .hb-card b{font-size: 3.6rem;font-weight: normal;}
+.hb-box .hb-txt{font-size: 1.2rem;color: #fff;padding-top: 2rem;}
+.hb-box .pop-btn-wrap{padding: 1.5rem 0 2.5rem;}
+
+/*奖品弹窗*/
+.pop-prz .prz-img{padding: 3rem 0 2rem;text-align: center;}
+.pop-prz .btn-wrap .btn-m{box-shadow: none;border-bottom: none;}
+
+/*没有抽奖机会弹窗*/
+.pop-nochange{background: #eb2b03;border-radius: .5rem;margin-top: 6.5rem;padding: 1rem 1.5rem 2rem;position: relative;}
+.pop-nochange:before{content: "";width: 14.4rem;height: 12rem;background: url(https://qian-img.tenpay.com/mqq/action/extend20150928/img/pop-nochange.png?v=1) no-repeat;background-size: 100% auto;position: absolute;top: -8.8rem;left: 50%;margin-left: -7.2rem;z-index: -1;}
+.pop-nochange .list-box{padding: 2.5rem 1rem 0 3rem;position: relative;}
+.pop-nochange .list-box:before{content: "";width: 1px;background: #bb3115;position: absolute;left: 1rem;top:3.2rem;bottom: 1.8rem;}
+.pop-nochange .list-box li{color: #fff;font-size: 1.2rem;text-align: left;padding-bottom: 1.8rem;position: relative;}
+.pop-nochange .list-box li:before{content: "";width: .8rem;height: .8rem;background: #bb3115;-webkit-border-radius: .8rem;border-radius: 50%;position: absolute;top: .6rem;left:-2.4rem;}
+
+/******************
+    活动规则
+*******************/
+/*有序ol*/
+.ol-list{padding:2rem 2rem 2rem 4rem;}
+.ol-list li{ font-size: 1.4rem; color: #bae4ff; list-style:decimal; list-style-position: outside; line-height: 1.8rem;}
+
+/******************
+    动画
+*******************/
+/*闪灯*/
+.flash li:nth-child(odd) {-webkit-animation: change 1s infinite linear;}
+.flash li:nth-child(even) {-webkit-animation: change2 1s infinite linear;}
+            @-webkit-keyframes change {
+                0% {
+                    background: rgba(255,255,255,.3);
+                    box-shadow: 0 0 0.05rem #00b1e4;
+                }
+                1% {
+                    background: #fff;
+                    box-shadow: 0 0 0.05rem #fff;
+                }
+                50% {
+                    background: #fff;
+                    box-shadow: 0 0 0.05rem #fff;
+                }
+                51% {
+                    background: rgba(255,255,255,.3);
+                    box-shadow: 0 0 0.05rem #00b1e4;
+                }
+                100% {
+                    background: rgba(255,255,255,.3);
+                    box-shadow: 0 0 0.05rem #00b1e4;
+                }
+            }
+            @-webkit-keyframes change2 {
+                0% {
+                    background: #fff;
+                    box-shadow: 0 0 0.05rem #fff;
+                }
+                1% {
+                    background: rgba(255,255,255,.3);
+                    box-shadow: 0 0 0.05rem #00b1e4;
+                }
+                50% {
+                    background: rgba(255,255,255,.3);
+                    box-shadow: 0 0 0.05rem #00b1e4;
+                }
+                51% {
+                    background: #fff;
+                    box-shadow: 0 0 0.05rem #fff;
+                }
+                100% {
+                    background: #fff;
+                    box-shadow: 0 0 0.05rem #fff;
+                }
+            }
+
+/*弹窗动画*/
+.pop-detail{-webkit-perspective: 1300px;}
+.pop-cnt-wrap{-webkit-animation:popshow 1s both;}
+@-webkit-keyframes popshow{
+0%{
+     -webkit-transform-style: preserve-3d;
+     -webkit-transform: translateZ(100px) translateX(-30%) rotateY(300deg);
+     -webkit-transform-origin: 0 100%;
+     opacity: 0;
+     }
+
+100%{    
+     -webkit-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+     opacity: 1;
+     }
+}
+
+/*轮播提示点*/
+.slide-page li.cur{-webkit-animation:eps .3s linear both;}
+@-webkit-keyframes eps{
+  50%{ -webkit-transform:scale(2);}
+  100%{ -webkit-transform:scale(1);}
+}
+
+/*抽奖按钮*/
+.go-btn{-webkit-animation:click 1s infinite linear;}
+@-webkit-keyframes click{
+	0%,25%,100%{box-shadow: inset 0 -9px 0 #ff5035,0 3px 0 #ffd6c9;top: 0;}
+    20%{box-shadow: inset 0 0px 0 #ff5035;top: 2px}
+}
+
+/******************
+    响应式
+*******************/
+@media all and (min-width:360px){
+    html{font-size:11.25px;}
+}
+@media all and (min-width:384px){
+    html{font-size:12px;}
+}
+@media all and (min-width:400px){
+    html{font-size:12.5px;}
+}
+@media all and (max-height:480px){
+
+}
+
+@media (device-width:375px) and (-webkit-min-device-pixel-ratio:2){
+/* 兼容iphone 6 */
+
+}
+@media (device-width:414px) and (-webkit-min-device-pixel-ratio:3.0){
+/* 兼容iphone6 plus */
+
+}

@@ -1,0 +1,105 @@
+@charset "UTF-8";
+body,div,dl,dt,dd,ul,ol,li,form,input,textarea,p,section,button {
+	margin: 0;
+	padding: 0
+}
+body{
+	font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+	line-height: 1.5;
+	font-size: 16px;
+	color: #000;
+	background-color: #fff;
+	-webkit-user-select: none;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	outline: 0
+}
+
+.top{
+width:100%;
+}
+.top img{
+width:100%;
+}
+
+.shengji{
+width:100%;
+}
+.shengji_top {
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+    height: 50px;
+    padding: 18px 15px;
+}
+
+.shengji_top_l {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    text-align: center;
+    height: 47px;
+    font-size: 16px;
+    border-radius: 3px;
+    border-color: #0baae4;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #1fbaf3), to(#18b4ed));
+
+}
+.shengji_top_l span {
+    position: relative;
+    display: block;
+}
+.shengji_top_l .svip {
+    width: 0px;
+    height: 0px;
+	margin:0px 0 0 0px;
+    background-image: url("index.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.shengji_top_l .text {
+    font-family: Arial;
+	line-height:47px;
+	text-align:center;
+	color: #fff;
+	padding-left:10px;
+}
+.shengji_top_l .text a{
+	color: #fff;
+	text-decoration:none;
+}
+
+
+.shengji_hao {
+width: 100%;
+color: #000;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+display: -webkit-box;
+-webkit-box-sizing: border-box;
+overflow: hidden;
+-webkit-box-align: center;
+height: 44px;
+line-height: 44px;
+font-size: 14px;
+padding: 1% 5%;
+}
+.shengji_hao .common-pay-input-qqnumber{
+    margin-left: 10px;
+    display: block;
+    width: auto;
+    width: 75%;
+    height: 30px;
+    line-height: 30px;
+    border: 0px;
+    outline: 0px;
+	font-size:14px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0px 0 0 0px;
+	border:0px #ccc solid;
+	border-bottom:1px #ccc solid;
+}
+ul { list-style: none; }
